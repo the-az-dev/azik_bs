@@ -3,7 +3,6 @@ import Gen from './gen.vue';
 
 const route = useRoute()
 const slug = route.params.slug
-console.log(slug);
 const { data: post, pending } = await useAsyncData(`blog-${slug}`, () => {
   return queryCollection('blog').path(`/blog/${slug}`).first()
 })
